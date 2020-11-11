@@ -6,9 +6,10 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Pojazdy {
-    final static  Logger logger = LogManager.getLogger(Pojazdy.class);
-
+public class Vehicles {
+    final static  Logger logger = LogManager.getLogger(Vehicles.class);
+    private static int maxSpeed, maxSpeed_2;
+    private static String producer, producer_2;
     private static Scanner scan;
     public static void main(String[] args) {
 
@@ -16,6 +17,7 @@ public class Pojazdy {
     }
 
     public static void menu() {
+
         scan = new Scanner(System.in);
         boolean exit = false;
         String option;
@@ -35,32 +37,32 @@ public class Pojazdy {
             for (String element : i)
                 System.out.println(element);
             System.out.println();
-            logger.info("WHAT DO YOU WANT TO PICK? (1-6): ");
+            logger.info("WHAT DO YOU WANT TO PICK? (Type: car/ship/plane/bicycle/all/exit) ");
             option = scan.nextLine();
 
             switch(option) {
 
-                case "1":
+                case "car":
                     Car();
                     break;
 
-                case "2":
+                case "ship":
                     Ship();
                     break;
 
-                case "3":
+                case "plane":
                     Plane();
                     break;
 
-                case "4":
+                case "bicycle":
                     Bicycle();
                     break;
 
-                case "5":
+                case "all":
                     All();
                     break;
 
-                case "6":
+                case "exit":
                     System.exit(0);
                     break;
 
@@ -75,10 +77,10 @@ public class Pojazdy {
 
 
     public static void Car() {
-        String producer = "BMW";
-        String producer_2 = "Audi";
-        int maxSpeed = 130;
-        int maxSpeed_2 = 140;
+        producer = "BMW";
+        producer_2 = "Audi";
+        maxSpeed = 130;
+        maxSpeed_2 = 140;
         Map<String, Integer> Car = new HashMap<String, Integer>();
         Car.put(producer, maxSpeed);
         Car.put(producer_2, maxSpeed_2);
@@ -98,14 +100,14 @@ public class Pojazdy {
     }
 
     public static void Ship() {
-        String producer = "Dana";
-        String producer_2 = "Monica";
-        int maxSpeed = 150;
-        int maxSpeed_2 = 120;
-        Map<String, Integer> Car = new HashMap<String, Integer>();
-        Car.put(producer, maxSpeed);
-        Car.put(producer_2, maxSpeed_2);
-        logger.info("Moje statki: " + Car);
+        producer = "Dana";
+        producer_2 = "Monica";
+        maxSpeed = 150;
+        maxSpeed_2 = 120;
+        Map<String, Integer> Ship = new HashMap<String, Integer>();
+        Ship.put(producer, maxSpeed);
+        Ship.put(producer_2, maxSpeed_2);
+        logger.info("Moje statki: " + Ship);
         if(maxSpeed > maxSpeed_2) {
             logger.info("Pojazd SHIP producenta Dana jest najszybszy, jego maksymalna prędkość to: " +maxSpeed + " km/h");
         }
@@ -122,14 +124,14 @@ public class Pojazdy {
     }
 
     public static void Plane() {
-        String producer = "Ryanair";
-        String producer_2 = "Wizzair";
-        int maxSpeed = 100;
-        int maxSpeed_2 = 90;
-        Map<String, Integer> Car = new HashMap<String, Integer>();
-        Car.put(producer, maxSpeed);
-        Car.put(producer_2, maxSpeed_2);
-        logger.info("Moje samoloty: " + Car);
+        producer = "Ryanair";
+        producer_2 = "Wizzair";
+        maxSpeed = 100;
+        maxSpeed_2 = 90;
+        Map<String, Integer> Plane = new HashMap<String, Integer>();
+        Plane.put(producer, maxSpeed);
+        Plane.put(producer_2, maxSpeed_2);
+        logger.info("Moje samoloty: " + Plane);
         if(maxSpeed > maxSpeed_2) {
             logger.info("Pojazd PLANE producenta Ryanair jest najszybszy, jego maksymalna prędkość to: " +maxSpeed + " km/h");
         }
@@ -146,14 +148,14 @@ public class Pojazdy {
     }
 
     public static void Bicycle() {
-        String producer = "Caraiman";
-        String producer_2 = "Vellberg";
-        int maxSpeed = 80;
-        int maxSpeed_2 = 60;
-        Map<String, Integer> Car = new HashMap<String, Integer>();
-        Car.put(producer, maxSpeed);
-        Car.put(producer_2, maxSpeed_2);
-        logger.info("Moje Rowery: " + Car);
+        producer = "Caraiman";
+        producer_2 = "Vellberg";
+        maxSpeed = 80;
+        maxSpeed_2 = 60;
+        Map<String, Integer> Bicycle = new HashMap<String, Integer>();
+        Bicycle.put(producer, maxSpeed);
+        Bicycle.put(producer_2, maxSpeed_2);
+        logger.info("Moje Rowery: " + Bicycle);
         if(maxSpeed > maxSpeed_2) {
             logger.info("Pojazd BICYCLE producenta Caraiman jest najszybszy, jego maksymalna prędkość to: " +maxSpeed + " km/h");
         }

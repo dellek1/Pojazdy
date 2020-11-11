@@ -2,7 +2,6 @@ package Pojazdy;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.util.Scanner;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,70 +9,6 @@ public class Vehicles {
     final static  Logger logger = LogManager.getLogger(Vehicles.class);
     private static int maxSpeed, maxSpeed_2;
     private static String producer, producer_2;
-    private static Scanner scan;
-    public static void main(String[] args) {
-
-        menu();
-    }
-
-    public static void menu() {
-
-        scan = new Scanner(System.in);
-        boolean exit = false;
-        String option;
-
-        String[] i = new String[] {
-                "\nYOUR POSSIBLE CHOICES:",
-                "1. CAR",
-                "2. SHIP",
-                "3. PLANE",
-                "4. BICYCLE",
-                "5. ALL",
-                "6. EXIT"
-        };
-
-
-        do {
-            for (String element : i)
-                System.out.println(element);
-            System.out.println();
-            logger.info("WHAT DO YOU WANT TO PICK? (Type: car/ship/plane/bicycle/all/exit) ");
-            option = scan.nextLine();
-
-            switch(option) {
-
-                case "car":
-                    Car();
-                    break;
-
-                case "ship":
-                    Ship();
-                    break;
-
-                case "plane":
-                    Plane();
-                    break;
-
-                case "bicycle":
-                    Bicycle();
-                    break;
-
-                case "all":
-                    All();
-                    break;
-
-                case "exit":
-                    System.exit(0);
-                    break;
-
-                default:
-                    logger.error("Podaj prawidłową opcję. Wybrana przez ciebie opcja jest błędna!");
-            }
-
-        }while (!exit);
-
-    }
-
 
 
     public static void Car() {
